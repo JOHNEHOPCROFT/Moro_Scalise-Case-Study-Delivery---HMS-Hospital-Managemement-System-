@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+__MACOSX/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE/editor
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+.cache/
+
+# Local environment/configuration
+.env
+*.local
+
+# Fortify / scanner local outputs
+*.fpr
+*.fvdl
+*.har
+
+# Backup/database temporary files
+*.bak
+*.dump
+*.sql.bak

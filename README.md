@@ -2,7 +2,7 @@
 
 Repository for the **Secure Software Engineering** exam project, academic year **2025–2026**.
 
-This project is based on the analysis, exploitation, remediation, and privacy-oriented redesign of a PHP/MySQL **Hospital Management System (HMS)**.
+This project presents the security and privacy analysis, remediation, and documentation of a PHP/MySQL **Hospital Management System (HMS)** web application.
 
 ## Authors
 
@@ -16,69 +16,36 @@ University: **Università degli Studi di Bari Aldo Moro**
 
 ## Project Overview
 
-The objective of this project is to evaluate and improve the security and privacy posture of an existing Hospital Management System web application.
+The objective of this project is to evaluate and improve the security and privacy posture of an existing Hospital Management System.
 
-The original application is a traditional PHP/MySQL system designed to support hospital workflows involving three main user roles:
+The HMS is a web application developed with a **PHP backend** and a **MySQL database**, intended to run in a local **XAMPP** environment.
 
-- **Patients**, who can manage personal records, book appointments, and access prescriptions.
-- **Doctors**, who can manage schedules, appointments, and clinical requests.
-- **Administrators**, who can manage users, doctors, appointments, and system-level information.
+The system supports three main user roles:
 
-Because the application handles personal and healthcare-related data, the project focuses on both **security engineering** and **privacy-by-design** principles.
+- **Patients**, who can register, log in, book appointments, access prescriptions, and view personal information.
+- **Doctors**, who can manage appointments, schedules, prescriptions, and patient-related workflows.
+- **Administrators**, who can manage users, doctors, appointments, messages, and system-level data.
 
-The case study follows a Secure Software Development Lifecycle approach, combining:
+Since the application handles personal and healthcare-related information, the project focuses on both:
 
-- Red Teaming
-- Passive and active reconnaissance
-- Static Application Security Testing
-- Dynamic Application Security Testing
-- Manual vulnerability validation
-- Security remediation
-- Privacy assessment
-- Privacy-by-design architectural improvement
+- **Secure Software Engineering**
+- **Privacy-by-Design**
 
----
-
-## Technology Stack
-
-The application uses the following technologies:
-
-- **PHP**
-- **MySQL**
-- **Apache**
-- **XAMPP**
-- **Bootstrap**
-- **jQuery**
-- **Font Awesome**
-- **TCPDF**
-
-The application is intended to run locally in a XAMPP environment.
+The work follows a Secure Software Development Lifecycle approach, combining static analysis, dynamic analysis, manual validation, remediation, and privacy-oriented architectural improvement.
 
 ---
 
 ## Repository Structure
 
 ```text
-Hospital-Management-System-SSE/
+Moro_Scalise-Case-Study-Delivery---HMS-Hospital-Managemement-System-/
 │
-├── src/
-│   └── Application source code
-│
-├── database/
-│   └── MySQL database dump or schema file
+├── Hospital-Management-System/
+│   └── PHP/MySQL application source code
 │
 ├── docs/
-│   ├── Final case study report
-│   └── Final project presentation
-│
-├── evidence/
-│   ├── sast/
-│   │   └── Static analysis evidence
-│   ├── dast/
-│   │   └── Dynamic analysis evidence
-│   └── manual-tests/
-│       └── Manual validation and regression testing evidence
+│   ├── MoroScalise_CaseStudy_SSE_2026.pdf
+│   └── HMS_Case_Study_Moro_Scalise.pptx
 │
 ├── README.md
-├── .gitignore
-└── LICENSE
+└── .gitignore
