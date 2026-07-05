@@ -2,12 +2,17 @@
 
 // SSE-SECURITY-FIX: centralized session hardening bootstrap.
 if (session_status() === PHP_SESSION_NONE) {
-    // SSE-SECURITY-FIX: enforce Secure cookies for the target hardened deployment.
-    // NOTE: this assumes HTTPS in the final secure environment used for assessment/presentation.
-    $secure = true;
+    // SSE-SECURITY-FIX: enable Secure cookies only when the application is actually served over HTTPS.
+    // This keeps the hardened behavior for the final secure deployment while allowing localhost/XAMPP
+    // testing over plain HTTP without breaking the PHP session and CSRF token lifecycle.
+    $secure = (
+        (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || (isset($_SERVER['SERVER_PORT']) && (int) $_SERVER['SERVER_PORT'] === 443)
+        || (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+    );
     ini_set('session.use_strict_mode', '1');
     ini_set('session.use_only_cookies', '1');
-    ini_set('session.cookie_secure', '1');
+    ini_set('session.cookie_secure', $secure ? '1' : '0');
     ini_set('session.cookie_httponly', '1');
     ini_set('session.cookie_lifetime', '0');
     if (PHP_VERSION_ID >= 70300) {
