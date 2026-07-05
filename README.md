@@ -2,7 +2,7 @@
 
 Repository for the **Secure Software Engineering** exam project, academic year **2025–2026**.
 
-This project presents the security and privacy analysis, remediation, and documentation of a PHP/MySQL **Hospital Management System (HMS)** web application.
+This project contains the security and privacy analysis, remediation work, and final delivery material for a PHP/MySQL **Hospital Management System (HMS)** web application.
 
 ## Authors
 
@@ -38,14 +38,98 @@ The work follows a Secure Software Development Lifecycle approach, combining sta
 ## Repository Structure
 
 ```text
-Moro_Scalise-Case-Study-Delivery---HMS-Hospital-Managemement-System-/
+Moro_Scalise-Case-Study-Delivery---HMS-Hospital-Managemement-System/
 │
 ├── Hospital-Management-System/
-│   └── PHP/MySQL application source code
+│   ├── PHP/MySQL application source code
+│   ├── myhmsdb.sql
+│   ├── TCPDF/
+│   └── _scan_excluded/
 │
 ├── docs/
-│   ├── MoroScalise_CaseStudy_SSE_2026.pdf
-│   └── HMS_Case_Study_Moro_Scalise.pptx
+│   ├── HMS_Case_Study_Moro_Scalise.pdf
+│   └── Progetto_Moro_Scalise.md
 │
 ├── README.md
 └── .gitignore
+```
+
+---
+
+## Runtime Project Folder
+
+The application to execute is contained in:
+
+```text
+Hospital-Management-System/
+```
+
+This is the folder that must be copied under the XAMPP `htdocs/` directory for local execution.
+
+---
+
+## Documentation Folder
+
+The project documentation delivered with the repository is contained in:
+
+```text
+docs/
+```
+
+Current documentation files:
+
+- `docs/HMS_Case_Study_Moro_Scalise.pdf`
+- `docs/Progetto_Moro_Scalise.md`
+
+---
+
+## Database Setup
+
+The database dump included in the repository is:
+
+```text
+Hospital-Management-System/myhmsdb.sql
+```
+
+The application is configured to use the database name:
+
+```text
+myhmsdb
+```
+
+Before running the project, create the database in phpMyAdmin (or MySQL) and import the provided SQL dump.
+
+---
+
+## Execution Steps
+
+1. Install and start **XAMPP**.
+2. Copy the folder `Hospital-Management-System/` into your XAMPP `htdocs/` directory.
+3. Create a MySQL database named **`myhmsdb`**.
+4. Import `Hospital-Management-System/myhmsdb.sql` into that database.
+5. Open the application in the browser through the local XAMPP path.
+
+Example:
+
+```text
+http://localhost/Hospital-Management-System/
+```
+
+---
+
+## Delivery Notes
+
+- The folder `_scan_excluded/` is intentionally preserved **for traceability** of the remediation and scan-scope reduction process discussed in the documentation.
+- The folder `TCPDF/` is retained because the application still uses `tcpdf.php` for PDF/bill generation.
+- Some legacy files such as `error.php`, `error1.php`, and `error2.php` are preserved in the repository for completeness and compatibility, even if the remediated flows rely less on them.
+
+---
+
+## Final Scope of the Delivered Repository
+
+This repository is intended to deliver:
+
+1. the **remediated web application**;
+2. the **database dump** needed to run it locally;
+3. the **case study documentation** used for the exam;
+4. traceable evidence of the applied security hardening and remediation choices.
